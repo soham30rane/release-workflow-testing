@@ -1,0 +1,12 @@
+# .github/workflows/release-test.yml
+name: Test Release Trigger
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Release Triggered! Tag is ${{ github.ref_name }}"
